@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SnakbarService } from '../../Services/snakbar.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
 })
@@ -29,5 +31,12 @@ export class FormsComponent {
       footerText: "ReactiveFormsModule | Uses FormArray for dynamic fields | Best for unknown form structures | Runtime-generated controls"
     }
   ]
+  constructor(private router: Router) {}
+
+  SelectForm(item: any) {
+    const route = item.title.toLowerCase().replace(/\s/g, '-'); // Convert to lowercase and replace spaces
+    this.router.navigate([route]);
+  }
 
 }
+
