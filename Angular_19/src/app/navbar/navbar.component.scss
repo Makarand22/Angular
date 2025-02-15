@@ -1,0 +1,25 @@
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #c24244, #6af400); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Hides original text color */
+}
+
+.navbar-brand:hover {
+    color: #c24244;
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+    color: #7f4722;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+    color: #7f4722;
+}
+
+.navbar-scrolled {
+    background-color: #ffede7;
+}

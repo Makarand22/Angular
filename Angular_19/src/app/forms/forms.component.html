@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row" >
+        <!-- Reactive Form Card -->
+        @for (item of formsData; track $index) {
+        <div  class="col-md-4">
+            <div class="card text-center" style="height: 100%;">
+                <div class="card-header">
+                   <h4>{{item.title}}</h4> 
+                </div>
+                <div class="card-body">
+                    <!-- <h5 class="card-title">{{item.description}}</h5> -->
+                    <p class="card-text">{{item.description}}</p>
+                </div>
+                <div class="card-button">
+                    <a href="#" class="btn btn-primary">{{item.buttonText}}</a>
+                </div>
+                <div class="card-footer text-muted">
+                    <h5>Differences</h5>
+                    <ul style="text-align: left;">
+                        @for (item of item.footerText.split('|'); track $index) {
+                            <li>{{item}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="container">
+    <h1 class="title">{{ title }}</h1>
+
+    <div class="accordion">
+        <!-- Text Transformations -->
+        <div class="section">
+            <h3 (click)="toggleSection('textTransform')" class="accordion-header">
+                Text Transformations
+                <span>{{ isOpen.textTransform ? '▲' : '▼' }}</span>
+            </h3>
+            <div *ngIf="isOpen.textTransform" class="accordion-content">
+                <p><strong>Original Text:</strong> {{ text }}</p>
+                <p><strong>Uppercase:</strong> <span class="uppercase">{{ text | uppercase }}</span></p>
+                <p><strong>Lowercase:</strong> <span class="lowercase">{{ text | lowercase }}</span></p>
+                <p><strong>Titlecase:</strong> <span class="titlecase">{{ text | titlecase }}</span></p>
+            </div>
+        </div>
+
+        <!-- Date Formats -->
+        <div class="section">
+            <h3 (click)="toggleSection('dateFormat')" class="accordion-header">
+                Date Formats
+                <span>{{ isOpen.dateFormat ? '▲' : '▼' }}</span>
+            </h3>
+            <div *ngIf="isOpen.dateFormat" class="accordion-content">
+                <p><strong>Full Date:</strong> <span>{{ today | date:'fullDate' }}</span></p>
+                <p><strong>Short Date:</strong> <span>{{ today | date:'shortDate' }}</span></p>
+                <p><strong>Medium Date:</strong> <span>{{ today | date:'mediumDate' }}</span></p>
+                <p><strong>Long Date:</strong> <span>{{ today | date:'longDate' }}</span></p>
+                <p><strong>Time:</strong> <span>{{ today | date:'shortTime' }}</span></p>
+            </div>
+        </div>
+
+        <!-- Number Formats -->
+        <div class="section">
+            <h3 (click)="toggleSection('numberFormat')" class="accordion-header">
+                Number Formats
+                <span>{{ isOpen.numberFormat ? '▲' : '▼' }}</span>
+            </h3>
+            <div *ngIf="isOpen.numberFormat" class="accordion-content">
+                <p><strong>Currency:</strong> <span class="currency">{{ amount | currency:'USD' }}</span></p>
+                <p><strong>Decimal:</strong> <span class="decimal">{{ amount | number:'1.2-2' }}</span></p>
+                <p><strong>Percentage:</strong> <span class="percentage">{{ percent | percent }}</span></p>
+            </div>
+        </div>
+
+        <!-- String Operations -->
+        <div class="section">
+            <h3 (click)="toggleSection('stringOperations')" class="accordion-header">
+                String Operations
+                <span>{{ isOpen.stringOperations ? '▲' : '▼' }}</span>
+            </h3>
+            <div *ngIf="isOpen.stringOperations" class="accordion-content">
+                <p><strong>Slice (first 10 chars):</strong> <span class="slice">{{ longText | slice:0:10 }}</span></p>
+            </div>
+        </div>
+
+        <!-- JSON Data -->
+        <div class="section">
+            <h3 (click)="toggleSection('jsonData')" class="accordion-header">
+                JSON Data
+                <span>{{ isOpen.jsonData ? '▲' : '▼' }}</span>
+            </h3>
+            <div *ngIf="isOpen.jsonData" class="accordion-content">
+                <pre>{{ jsonData | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>

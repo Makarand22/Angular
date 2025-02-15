@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0" style="background-color: #ffede7;">
+    <div class="container">
+        <a class="navbar-brand" href="#">Learn Angular</a>
+        <button class="navbar-toggler ps-0" type="button" data-mdb-collapse-init data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="d-flex justify-content-start align-items-center">
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @for (item of topicList; track $index) {
+                <li class="nav-item active">
+                    <a (click)="selectTopic(item)" class="nav-link px-3" [routerLink]="['/yourRoute', item]">{{ item }}</a>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
